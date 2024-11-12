@@ -3,7 +3,7 @@ import Imagem1 from '../assets/logo.png'
 
 const Hero = () => {
   return (
-    <div className='text-white flex items-center justify-center h-screen'>
+    <div id="hero" className='text-white flex items-center justify-center h-screen'>
       <div className='flex flex-col md:flex-row items-center justify-between w-full max-w-[1240px] mx-auto p-4'>
         <div className='w-full md:w-1/2 p-4'>
           <img

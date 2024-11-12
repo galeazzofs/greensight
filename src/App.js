@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import LoginForm from "./pages/LoginForm"
 import DashMap from "./pages/DashMap";
@@ -12,7 +12,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home/>}/> 
-          <Route path="/home" element={<Home/>}/>
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/dashmap" element={<DashMap/>}/>
         </Routes>

@@ -15,8 +15,9 @@ const Navbar = () => {
     <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
         <h1 className='w-full text-3xl font-bold text-[#00df9a]'>GREEN SIGHT</h1>
         <ul className='hidden md:flex'>
-            <li className='p-4'>Home</li>
-            <li className='p-4'>Sobre</li>
+            <li className='p-4'>
+                <Link to="/">Home</Link></li>
+            <li className='p-4'><Link to="#hero">Sobre</Link></li>
             <li className='p-4'>Serviços</li>
             <li className='p-4'>Contato</li>
             <li className='p-4 border-2 border-[#00df9a] rounded-lg cursor-pointer bg-[#00df9a] text-white font-medium'>

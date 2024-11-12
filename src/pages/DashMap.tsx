@@ -54,18 +54,18 @@ const DashMap = () => {
 
   return (
     <APIProvider apiKey="AIzaSyDiGkyPiZAgn1XtGCfHVZ2UI4XzaW9uzx4">
-      <div className="flex h-screen w-full">
+      <div className="flex h-screen w-full bg-gradient-to-r from-indigo-100 via-indigo-200 to-indigo-300">
         {/* Coluna Lateral - 1/3 da largura */}
-        <div className="w-1/3 bg-gray-100 p-8 shadow-md">
-          <h3 className="text-center text-xl font-bold mb-6">Escolha o Endereço</h3>
+        <div className="w-1/3 bg-white p-8 rounded-lg shadow-xl">
+          <h3 className="text-center text-2xl font-semibold text-gray-800 mb-6">Escolha o Endereço</h3>
           
           {/* Estado */}
           <div className="mb-6">
-            <label className="block font-semibold">Estado:</label>
+            <label className="block text-lg font-medium text-gray-700 mb-2">Estado:</label>
             <select
               value={estadoSelecionado}
               onChange={handleEstadoChange}
-              className="w-full p-3 border border-gray-300 rounded-lg text-lg cursor-pointer"
+              className="w-full p-3 border border-gray-300 rounded-xl text-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <option value="">Selecione o Estado</option>
               <option value="São Paulo">São Paulo</option>
@@ -77,11 +77,11 @@ const DashMap = () => {
           {/* Cidade */}
           {estadoSelecionado && (
             <div>
-              <label className="block font-semibold">Cidade:</label>
+              <label className="block text-lg font-medium text-gray-700 mb-2">Cidade:</label>
               <select
                 value={cidadeSelecionada}
                 onChange={handleCidadeChange}
-                className="w-full p-3 border border-gray-300 rounded-lg text-lg cursor-pointer"
+                className="w-full p-3 border border-gray-300 rounded-xl text-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
                 <option value="">Selecione a Cidade</option>
                 {cidades[estadoSelecionado].map((cidade) => (
