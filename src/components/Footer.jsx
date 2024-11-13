@@ -13,10 +13,10 @@ const Footer = () => {
       <div className="grid lg:grid-cols-4 sm:grid-cols-1 gap-8">
         {/* Primeira coluna (título e ícones) */}
         <div>
-          <h1 className="w-full text-3xl font-bold text-[#00df9a]">GREEN SIGHT</h1>
-          <p className="py-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, est.
-          </p>
+          <h1 className="w-full text-3xl font-bold text-[#00df9a]">
+            GREEN SIGHT
+          </h1>
+          <p className="py-4">Cuidar da Terra é nossa prioridade</p>
           <div className="flex justify-between md:w[75%] my-6 ">
             <FaFacebookSquare size={30} />
             <FaInstagram size={30} />
@@ -46,7 +46,6 @@ const Footer = () => {
               <li className="py-2 text-sm">lorem</li>
             </ul>
           </div>
-
           <div>
             <h6 className="font-medium text-gray-400">Serviços</h6>
             <ul>
