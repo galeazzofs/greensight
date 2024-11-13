@@ -1,30 +1,35 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Logo from "../assets/logo.png";
-import { toast } from 'react-toastify';
-import { useNavigate } from "react-router-dom"; // Usando useNavigate no lugar de useHistory
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../components/firebase";
+import { useNavigate } from "react-router-dom"; // Usando useNavigate para navegação
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import app from "../components/firebase";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Login = () => {
-  const navigate = useNavigate(); // Para manipular a navegação programática
+const Register = () => {
+  const navigate = useNavigate();
+  const auth = getAuth(app); // Para manipular a navegação programática
 
   // Função para navegar para a página de "Home"
   const handleGoHome = () => {
-    navigate("/"); // Navega para a rota /home
+    navigate("/"); // Navega para a rota /
   };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log("Usuário logado com sucesso!");
-      toast.success("Usuário Logado!", {
+      await createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      console.log(user);
+      console.log("Usuário Registrado!");
+      toast.success("Usuário Registrado!", {
         position: "top-center",
       });
-      navigate("/dashmap");
+      navigate("/login");
     } catch (error) {
       console.log(error.message);
       toast.success(error.message, {
@@ -35,8 +40,8 @@ const Login = () => {
 
   return (
     <div
-      onSubmit={handleSubmit}
       className="flex items-center justify-center h-screen bg-gray-900"
+      onSubmit={handleRegister}
     >
       <div className="flex w-full max-w-4xl bg-gray-800 rounded-lg shadow-md">
         <div className="hidden md:flex md:w-1/2 items-center justify-center p-4">
@@ -44,7 +49,9 @@ const Login = () => {
         </div>
 
         <div className="w-full md:w-1/2 p-8 space-y-4">
-          <h2 className="text-2xl font-bold text-center text-white">Login</h2>
+          <h2 className="text-2xl font-bold text-center text-white">
+            Registrar
+          </h2>
           <form className="space-y-6">
             <div>
               <label
@@ -58,7 +65,6 @@ const Login = () => {
                 id="email"
                 className="w-full px-3 py-2 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00df9a]"
                 placeholder="Digite seu email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -74,7 +80,6 @@ const Login = () => {
                 id="password"
                 className="w-full px-3 py-2 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00df9a]"
                 placeholder="Digite sua senha"
-                value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -82,21 +87,21 @@ const Login = () => {
               type="submit"
               className="w-full py-2 font-bold text-gray-900 bg-[#00df9a] rounded-md hover:bg-green-500"
             >
-              Entrar
+              Registrar
             </button>
           </form>
 
           <p className="text-sm text-center text-gray-400">
-            Ainda não tem conta?{" "}
-            <a href="/register" className="text-[#00df9a] hover:underline">
-              Cadastre-se
+            Já tem uma conta?{" "}
+            <a href="/login" className="text-[#00df9a] hover:underline">
+              Faça login
             </a>
           </p>
 
           {/* Botão de Voltar para Home */}
           <div className="mt-6">
             <button
-              onClick={handleGoHome} // Ao clicar, vai para a rota /home
+              onClick={handleGoHome} // Ao clicar, vai para a rota /
               className="w-full py-2 font-bold text-gray-900 bg-gray-700 rounded-md hover:bg-gray-600 transition duration-200"
             >
               Voltar
@@ -108,4 +113,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
