@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
-import { initializeApp } from 'firebase/app'; // Para inicializar o Firebase
-import { getAuth } from 'firebase/auth'; // Para o serviço de autenticação
-import { getFirestore } from 'firebase/firestore'; // Para o serviço Firestore
-import { auth, db } from './firebase';
+import { db } from './firebase';
 
 
 const Newsletter = () => {

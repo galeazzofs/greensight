@@ -24,7 +24,7 @@ const Login = () => {
       toast.success("Usuário Logado!", {
         position: "top-center",
       });
-      navigate("/dashmap");
+      navigate("/controlscreen");
     } catch (error) {
       console.log(error.message);
       toast.success(error.message, {
