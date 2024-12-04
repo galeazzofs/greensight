@@ -122,12 +122,27 @@ const ControlScreen = () => {
   };
 
   // Dados de endereços
-  const addressData = [
-    { endereco: "Rua das Flores, 123", status: "Obstruído", alertas: 5 },
-    { endereco: "Av. Paulista, 987", status: "Cheio", alertas: 2 },
-    { endereco: "Praça Central, 45", status: "Meio Cheio", alertas: 8 },
-    { endereco: "Rua Ametista, 876", status: "Vazio", alertas: 1 },
-  ];
+// Dados de endereços
+const addressData = [
+  { endereco: "Rua Augusta, 123", status: "Obstruído", alertas: 5 },
+  { endereco: "Avenida Paulista, 987", status: "Cheio", alertas: 2 },
+  { endereco: "Praça da Sé, 45", status: "Meio Cheio", alertas: 8 },
+  { endereco: "Rua Oscar Freire, 876", status: "Vazio", alertas: 1 },
+  { endereco: "Avenida Brigadeiro Luís Antônio, 455", status: "Obstruído", alertas: 7 },
+  { endereco: "Rua Haddock Lobo, 321", status: "Meio Cheio", alertas: 6 },
+  { endereco: "Rua Teodoro Sampaio, 654", status: "Cheio", alertas: 3 },
+  { endereco: "Avenida Faria Lima, 890", status: "Vazio", alertas: 0 },
+  { endereco: "Rua da Consolação, 111", status: "Obstruído", alertas: 4 },
+  { endereco: "Avenida Rebouças, 222", status: "Meio Cheio", alertas: 5 },
+  { endereco: "Rua Bela Cintra, 678", status: "Cheio", alertas: 9 },
+  { endereco: "Rua 25 de Março, 333", status: "Vazio", alertas: 1 },
+  { endereco: "Rua Vergueiro, 444", status: "Obstruído", alertas: 2 },
+  { endereco: "Rua da Mooca, 555", status: "Cheio", alertas: 4 },
+  { endereco: "Avenida Sapopemba, 666", status: "Meio Cheio", alertas: 7 },
+  { endereco: "Rua São Bento, 777", status: "Vazio", alertas: 3 },
+];
+
+
 
   // Função para obter a cor com base no status do bueiro
   const getStatusColor = (status) => {
